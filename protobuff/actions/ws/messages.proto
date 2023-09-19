@@ -13,4 +13,3 @@ message ActionAuth {
 message ActionAuthResult {
   string token = 1;
 }
-

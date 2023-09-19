@@ -21,4 +21,3 @@ message Status {
   int32 status_code = 1; // http codes for status
   optional Error error = 2;
 }
-
