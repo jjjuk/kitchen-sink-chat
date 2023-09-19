@@ -23,12 +23,12 @@ CREATE TABLE `chat` (
 CREATE TABLE `public_chat` (
   `chat_id` INT UNSIGNED AUTO_INCREMENT NOT NULL UNIQUE,
   `owner_id` INT UNSIGNED,
-  `title` VARCHAR(34) UNIQUE,
+  `chatname` VARCHAR(34) UNIQUE,
   `img` VARCHAR(255),
   `desc` TEXT(200),
   FOREIGN KEY `public_chat_id` (`chat_id`) REFERENCES chat (`id`) ON DELETE CASCADE,
   FOREIGN KEY `chat_owner` (`owner_id`) REFERENCES user (`id`) ON DELETE CASCADE,
-  FULLTEXT public_chat_search (`title`, `desc`)
+  FULLTEXT public_chat_search (`chatname`, `desc`)
 );
 
 CREATE TABLE `subscriber` (
