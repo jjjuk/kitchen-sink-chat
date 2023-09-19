@@ -53,12 +53,12 @@ CREATE TABLE `message` (
 );
 
 CREATE TABLE `read` (
-  `author_id` INT UNSIGNED NOT NULL,
-  `chat_id` INT UNSIGNED NOT NULL,
   `user_id` INT UNSIGNED NOT NULL,
+  `chat_id` INT UNSIGNED NOT NULL,
+  `read_by_id` INT UNSIGNED NOT NULL,
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  UNIQUE KEY `read_unique` (`chat_id`, `author_id`, `user_id`),
-  FOREIGN KEY `read_message_author` (`author_id`) REFERENCES user (`id`) ON DELETE CASCADE,
+  UNIQUE KEY `read_unique` (`chat_id`, `user_id`, `read_by_id`),
+  FOREIGN KEY `read_message_author` (`user_id`) REFERENCES user (`id`) ON DELETE CASCADE,
   FOREIGN KEY `read_chat_message` (`chat_id`) REFERENCES chat (`id`) ON DELETE CASCADE,
-  FOREIGN KEY `read_by_user` (`user_id`) REFERENCES user (`id`) ON DELETE CASCADE
+  FOREIGN KEY `read_by_user` (`read_by_id`) REFERENCES user (`id`) ON DELETE CASCADE
 );
