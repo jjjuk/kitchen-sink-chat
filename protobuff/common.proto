@@ -1,0 +1,24 @@
+/* common messages */
+
+syntax = "proto3";
+
+package messenger.common;
+
+message WebSocketAction {
+  string name = 1;
+}
+
+message PubSubAction {
+  string name = 1;
+}
+
+message Error {
+  int32 error_code = 1;
+  string message = 2;
+}
+
+message Status {
+  int32 status_code = 1; // http codes for status
+  optional Error error = 2;
+}
+

@@ -1,0 +1,32 @@
+// enums for action types
+
+syntax = "proto3";
+
+package messenger.actions.pubsub.types;
+
+/* 
+  all the pub/sub actions happened to the private chats 
+  are bound to the id of user consumer 1000 - 1999
+
+  all the pub/sub actions happened to the public chats 
+  are bound to the id of chat 2000 - 2999
+*/
+enum PubSubActionTypes {
+  UNSPECIFIED = 0;
+
+  // private chat actions
+  PRIVATE_NEW_MESSAGE = 1000;
+  PRIVATE_NEW_READ = 1001;
+  PRIVATE_NEW_MESSAGE_EDITED = 1002;
+  PRIVATE_NEW_MESSAGE_DELETED = 1003;
+  PRIVATE_NEW_CHAT_DELETED = 1004;
+  reserved 1005 to 1999;
+
+  // public chat actions
+  PUBLIC_NEW_MESSAGE = 2000;
+  PUBLIC_NEW_READ = 2001;
+  PUBLIC_NEW_MESSAGE_EDITED = 2002;
+  PUBLIC_NEW_MESSAGE_DELETED = 2003;
+  PUBLIC_NEW_CHAT_DELETED = 2004;
+  reserved 2005 to 2999;
+}

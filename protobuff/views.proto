@@ -1,0 +1,61 @@
+/* app model views */
+
+syntax = "proto3";
+
+package messenger.models;
+
+message User {
+  uint32 id = 1;
+  optional uint32 created_at = 2;
+  optional string token = 3;
+  optional string img = 4;
+  optional string desc = 5;
+}
+
+message Chat {
+  uint32 id = 1;
+  optional uint32 created_at = 2;
+  optional bool public = 3;
+
+  optional User user = 4;
+  optional PublicChat public_chat = 5;
+  repeated User subscribers = 6;
+}
+
+message PublicChat {
+  optional uint32 chat_id = 1;
+  optional uint32 owner_id = 2;
+  optional string token = 3;
+  optional string img = 4;
+  optional string desc = 5;
+}
+
+message Subscriber {
+  optional uint32 chat_id = 1;
+  uint32 user_id = 2;
+  optional uint32 created_at = 3;
+
+  optional User user = 4;
+}
+
+message Message {
+  uint32 chat_id = 1;
+  uint32 user_id = 2;
+  optional uint32 created_at = 3;
+  optional uint32 updated_at = 4;
+  optional string value = 5;
+  bool delivered = 6;
+  optional bool is_read = 7;
+
+  optional User user = 8;
+  repeated Read read_by_users = 9;
+}
+
+message Read {
+  uint32 chat_id = 1;
+  uint32 user_id = 2;
+  uint32 read_by_id = 3;
+  optional uint32 created_at = 4;
+
+  optional User read_by = 5;
+}

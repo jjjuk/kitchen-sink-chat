@@ -1,0 +1,53 @@
+// enums for action types
+
+syntax = "proto3";
+
+package messenger.actions.ws.types;
+
+/*
+  misc actions 1-999
+  user actions 1000 - 1999
+  chat, public chat and subscriber actions 2000 - 2999
+  message and read actions 3000 - 3999
+  actions that server sends to clent 11000 - 11999 
+*/
+enum WebSocketActionTypes {
+  UNSPECIFIED = 0;
+
+  // misc action types
+  LOGIN = 1;
+  SIGNUP = 2;
+  reserved 3 to 999;
+
+  // user action types
+  USER_ME = 1000;
+  USER_GET = 1001;
+  USER_UPDATE = 1002;
+  USER_DELETE_ME = 1003;
+  USER_FIND = 1004;
+  reserved 1005 to 1999;
+
+  // chat action types
+  CHAT_DELETE = 2000; // private chat will be created with first message
+  PUBLIC_CHAT_CREATE = 2001;
+  PUBLIC_CHAT_UPDATE = 2002;
+  PUBLIC_CHAT_FIND = 2003;
+  SUBSCRIBE = 2004;
+  UNSUBSCRIBE = 2005;
+  reserved 2006 to 2999;
+
+  // message action types
+  MESSAGE_SEND = 3000;
+  MESSAGE_EDIT = 3001;
+  MESSAGE_DELETE = 3002;
+  MESSAGE_READ = 3003;
+  reserved 3004 to 3999;
+
+  // server to client actions
+  NEW_MESSAGE = 11000;
+  NEW_READ = 11001;
+  NEW_MESSAGE_EDITED = 11002;
+  NEW_MESSAGE_DELETED = 11003;
+  NEW_CHAT_DELETED = 11004;
+  reserved 11005 to 11999;
+}
