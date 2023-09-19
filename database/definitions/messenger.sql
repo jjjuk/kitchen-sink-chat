@@ -22,7 +22,7 @@ CREATE TABLE `chat` (
 
 CREATE TABLE `public_chat` (
   `chat_id` INT UNSIGNED AUTO_INCREMENT NOT NULL UNIQUE,
-  `owner_id` INT UNSIGNED,
+  `owner_id` INT UNSIGNED NOT NULL,
   `token` VARCHAR(34) UNIQUE,
   `img` VARCHAR(255),
   `desc` TEXT(200),
