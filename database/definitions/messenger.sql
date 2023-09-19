@@ -46,6 +46,7 @@ CREATE TABLE `message` (
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` TIMESTAMP DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   `value` TEXT(500),
+  `delivered` BOOLEAN NOT NULL DEFAULT FALSE,
   FOREIGN KEY `message_author` (`user_id`) REFERENCES user (`id`) ON DELETE CASCADE,
   FOREIGN KEY `message_chat` (`chat_id`) REFERENCES chat (`id`) ON DELETE CASCADE,
   UNIQUE chat_message_created_at (`chat_id`, `created_at`) USING BTREE,
