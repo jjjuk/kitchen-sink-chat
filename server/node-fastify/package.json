@@ -1,0 +1,22 @@
+{
+  "name": "node-fastify",
+  "version": "0.0.1",
+  "main": "src",
+  "author": "@jjjuk",
+  "license": "GPL-3.0",
+  "private": false,
+  "dependencies": {
+    "@fastify/cors": "^8.3.0",
+    "@fastify/websocket": "^8.2.0",
+    "@prisma/client": "^5.3.1",
+    "argon2": "^0.31.1",
+    "fastify": "^4.23.2",
+    "fastify-plugin": "^4.5.1",
+    "knex": "^2.5.1",
+    "mysql2": "^3.6.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2"
+  }
+}
