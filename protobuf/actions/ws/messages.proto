@@ -1,0 +1,45 @@
+// websocket actions
+
+syntax = "proto3";
+
+package messenger.actions.ws.messages;
+
+// action login and signup have similar inputs and results
+message AuthAction {
+  string username = 1;
+  string password = 2;
+}
+message AuthResult {
+  string token = 1;
+}
+
+// user actions
+
+message UserMeResult {
+  messenger.views.User user = 1;
+}
+
+message UserGetAction {
+  uint32 id = 1;
+}
+message UserGetResult {
+  messenger.views.User user = 1;
+}
+
+message UserUpdateAction {
+  messenger.views.User user = 1;
+}
+message UserUpdateResult {
+  messenger.views.User user = 1;
+}
+
+message UserDeleteResult {
+  bool deleted = 1;
+}
+
+message UserFindAction {
+  string query = 1;
+}
+message UserFindResult {
+  repeated messenger.views.User user = 1;
+}

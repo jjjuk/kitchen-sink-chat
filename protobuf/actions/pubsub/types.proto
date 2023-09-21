@@ -2,7 +2,7 @@
 
 syntax = "proto3";
 
-package messenger.actions.pubsub.types;
+package messenger.actions.pubsub;
 
 /* 
   all the pub/sub actions happened to the private chats 

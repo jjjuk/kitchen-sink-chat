@@ -1,0 +1,12 @@
+/* main proto file */
+
+syntax = "proto3";
+
+package messenger;
+
+import "./views.proto";
+import "./common.proto";
+import "./actions/ws/messages.proto";
+import "./actions/ws/types.proto";
+import "./actions/pubsub/messages.proto";
+import "./actions/pubsub/types.proto";

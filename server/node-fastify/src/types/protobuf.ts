@@ -1,0 +1,26 @@
+// prettier-ignore
+export type ProtobufTypes =
+	| 'messenger.views.User'
+	| 'messenger.views.Chat'
+	| 'messenger.views.PublicChat'
+	| 'messenger.views.Subscriber'
+	| 'messenger.views.Message'
+	| 'messenger.views.Read'
+	| 'messenger.common.WebSocketAction'
+	| 'messenger.common.PubSubAction'
+	| 'messenger.common.Error'
+	| 'messenger.common.Status'
+	| 'messenger.actions.ws.messages.AuthAction'
+	| 'messenger.actions.ws.messages.AuthResult'
+	| 'messenger.actions.ws.messages.UserMeResult'
+	| 'messenger.actions.ws.messages.UserGetAction'
+	| 'messenger.actions.ws.messages.UserGetResult'
+	| 'messenger.actions.ws.messages.UserUpdateAction'
+	| 'messenger.actions.ws.messages.UserUpdateResult'
+	| 'messenger.actions.ws.messages.UserDeleteResult'
+	| 'messenger.actions.ws.messages.UserFindAction'
+	| 'messenger.actions.ws.messages.UserFindResult'
+// prettier-ignore
+export type ProtobufEnums =
+	| 'messenger.actions.ws.WebSocketActionTypes'
+	| 'messenger.actions.pubsub.PubSubActionTypes'

@@ -2,7 +2,7 @@
 
 syntax = "proto3";
 
-package messenger.actions.ws.types;
+package messenger.actions.ws;
 
 /*
   misc actions 1-999

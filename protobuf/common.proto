@@ -5,11 +5,11 @@ syntax = "proto3";
 package messenger.common;
 
 message WebSocketAction {
-  string name = 1;
+  messenger.actions.ws.WebSocketActionTypes type = 1;
 }
 
 message PubSubAction {
-  string name = 1;
+  messenger.actions.pubsub.PubSubActionTypes type = 1;
 }
 
 message Error {

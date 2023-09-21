@@ -2,7 +2,7 @@
 
 syntax = "proto3";
 
-package messenger.models;
+package messenger.views;
 
 message User {
   uint32 id = 1;
