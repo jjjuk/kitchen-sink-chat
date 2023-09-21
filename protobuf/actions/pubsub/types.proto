@@ -9,7 +9,7 @@ package messenger.actions.pubsub;
   are bound to the id of user consumer 1000 - 1999
 
   all the pub/sub actions happened to the public chats 
-  are bound to the id of chat 2000 - 2999
+  are bound to the id of chat sender 2000 - 2999
 */
 enum PubSubActionTypes {
   UNSPECIFIED = 0;
